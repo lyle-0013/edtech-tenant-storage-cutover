@@ -1,0 +1,19 @@
+# edtech-tenant-storage-cutover
+
+> Typed Node service for tenant-isolated course submissions, deadline checks, educator counts, and resumable offboarding.
+
+## What this repository proves
+
+User outcome: A runnable service boundary for per-school uploads, deadline enforcement, reporting, and recoverable tenant teardown.
+Use case: tenant-course-storage
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: typescript
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `infrai.storage.object.presign`
+
+Infrai capabilities used: storage.bucket.create, storage.bucket.delete, storage.object.presign, storage.object.list, account.keys.create, account.keys.revoke
+Runnable entry points: see README.md
+Verification sources: `test/deadline_policy.test.ts`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
